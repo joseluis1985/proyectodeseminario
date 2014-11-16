@@ -1,0 +1,24 @@
+{%extends "base.html"%}
+{%block contenido%}
+<div class="contr">
+	<div class="col-xs-3 columna">
+	</div>
+	<div class="col-xs-5 columna1">
+			<div >
+				{% if estado %}
+				<div class="alert alert-danger" role="alert">{{mensaje}} <span class="glyphicon glyphicon-warning-sign"></span></div>
+				{% endif %}
+				<h1>login</h1>
+				<form action="" method="post">
+				{{form.as_ul}}
+				{% csrf_token %}
+				<div class="columna2">
+			  		{{formulario2.as_p}}
+			  	</div>
+				<input type="submit" value="Enviar">
+				</form>
+			</div>
+	</div>
+	
+</div>
+{%endblock%}

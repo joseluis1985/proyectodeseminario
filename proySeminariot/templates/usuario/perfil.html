@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{%block contenido%}
+<h1>Bienvenido!!! {{nombre}}</h1>
+<form action="" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ formulario.as_p }}
+				<button type="submit" class="btn btn-primary">Activar Cuenta</button>
+			</form>
+
+<p> <a href="/blog/registro/" class="btn btn-primary btn-lg"" role="button">Modificar Datos </a> </p>
+<img src="/media/{{ user.perfil.avatar}}" alt="avatar">
+			<img src="/media/{{ user.perfil.avatar.url_50x50}}" alt="avatar">
+			<img src="/media/{{ user.perfil.avatar.url_200x200}}" alt="avatar">
+{%endblock%}
